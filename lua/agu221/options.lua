@@ -40,3 +40,11 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
+vim.g['copilot_no_tab_map'] = true
+vim.g['copilot_assume_mapped'] = true
+
+function map(mode, key, fn, opts)
+	vim.api.nvim_set_keymap(mode, key, fn, opts or {})
+end
+
+vim.api.nvim_set_keymap('i', '<C-a>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
