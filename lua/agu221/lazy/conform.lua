@@ -4,7 +4,7 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "isort", "black", "docformatter" },
+				python = { "isort", "black" },
 				typescript = { "prettier" },
 			},
 			format_on_save = {
@@ -12,8 +12,8 @@ return {
 				lsp_format = "fallback",
 			},
 			formatters = {
-				docformatter = {
-					prepend_args = { "--wrap-summaries", "88", "--wrap-descriptions", "88" },
+				black = {
+					prepend_args = { "--skip-string-normalization" },
 				},
 			},
 		})
