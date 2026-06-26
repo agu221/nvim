@@ -23,7 +23,7 @@ vim.keymap.set("n", "<Leader>e", ":Ex<CR>")
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
+		require("conform").format({ bufnr = args.buf, lsp_format = "fallback" })
 	end,
 })
 
